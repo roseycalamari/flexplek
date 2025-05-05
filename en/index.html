@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexPlek IQ - Premium Coworking Space in Beverwijk</title>
+    <meta name="description" content="FlexPlek IQ offers premium coworking spaces in Beverwijk with flexible workspaces, private offices, and meeting rooms.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/favicon.ico">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/mobile.css">
+    <link rel="stylesheet" href="../assets/css/occupancy.css">
+    
+    <!-- Additional inline styles for header behavior -->
+    <style>
+        .header {
+            transition: transform 0.3s ease-in-out;
+        }
+        .header--hidden {
+            transform: translateY(-100%);
+        }
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="../photos/SCHIELAND VASTGOED BEVERWIJK_Logo.png" alt="FlexPlek IQ Logo" width="150" height="40">
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav nav--desktop">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#offerings" class="nav__link">Our Offerings</a></li>
+                    <li class="nav__item"><a href="#kickback" class="nav__link">Kickback Program</a></li>
+                    <li class="nav__item"><a href="#booking" class="nav__link">Booking</a></li>
+                    <li class="nav__item"><a href="#hours" class="nav__link">Opening Hours</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#activities" class="nav__link">Activities</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item nav__item--language">
+                        <a href="../index.html" class="nav__link nav__link--language">NL</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Open Menu">
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Off-Canvas Menu -->
+        <nav class="nav nav--mobile" id="mobileNav">
+            <div class="nav__header">
+                <div class="nav__logo">
+                    <img src="../photos/SCHIELAND VASTGOED BEVERWIJK_Logo.png" alt="FlexPlek IQ Logo" width="120" height="32">
+                </div>
+                <button class="nav__close" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#offerings" class="nav__link">Our Offerings</a></li>
+                <li class="nav__item"><a href="#kickback" class="nav__link">Kickback Program</a></li>
+                <li class="nav__item"><a href="#booking" class="nav__link">Booking</a></li>
+                <li class="nav__item"><a href="#hours" class="nav__link">Opening Hours</a></li>
+                <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                <li class="nav__item"><a href="#activities" class="nav__link">Activities</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                <li class="nav__item nav__item--language">
+                    <a href="../index.html" class="nav__link nav__link--language">NL</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-color: #f5f5f5 !important; position: relative !important; height: 100vh !important; min-height: 700px !important; overflow: hidden !important;">
+        <!-- Force background with multiple approaches -->
+        <div style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background-image: url('../photos/building view under.jpg') !important; background-size: cover !important; background-position: center !important; z-index: 1 !important;"></div>
+        
+        <div class="container hero__container" style="position: relative !important; z-index: 3 !important;">
+            <h1 class="hero__title" style="color: white !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.5) !important;">FlexPlek IQ</h1>
+            <p class="hero__subtitle" style="color: white !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.5) !important;">Premium Coworking Space in Beverwijk</p>
+            <div class="hero__cta">
+                <a href="#offerings" class="btn btn--primary">Discover Our Offerings</a>
+                <a href="#contact" class="btn btn--secondary" style="background-color: white !important; color: #1eaa5d !important;">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Offerings Section -->
+    <section class="section offerings" id="offerings">
+        <div class="container">
+            <h2 class="section__title">Our Offerings</h2>
+            <div class="offerings__grid">
+                <!-- Flexible Desk Rentals -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/desk 1.jpg" alt="Flexible Desk Rentals" onerror="this.src='https://via.placeholder.com/400x250?text=Flexible+Desk+Rentals'">
+                    </div>
+                    <h3 class="card__title">Flexible Desk Rentals</h3>
+                    <p class="card__text">
+                        Experience the freedom of our adaptable workspace solutions. Choose your perfect spot daily, equipped with ergonomic furniture and all necessary amenities. Ideal for freelancers and remote workers seeking a professional environment.
+                    </p>
+                    <button class="pricing-btn" data-show-text="View Pricing" data-hide-text="Hide Pricing">View Pricing</button>
+                    <div class="pricing-content">
+                        <ul class="pricing-list">
+                            <li><span>Flexible Desk:</span> <span class="price">€230 per month</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Private Offices -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/office with desks.jpg" alt="Private Offices" onerror="this.src='https://via.placeholder.com/400x250?text=Private+Offices'">
+                    </div>
+                    <h3 class="card__title">Private Offices</h3>
+                    <p class="card__text">
+                        Secure your dedicated space with our private office solutions. Fully furnished and customizable to your needs, these offices provide the perfect balance of privacy and community access. Available for both short and long-term commitments.
+                    </p>
+                    <button class="pricing-btn" data-show-text="View Pricing" data-hide-text="Hide Pricing">View Pricing</button>
+                    <div class="pricing-content">
+                        <ul class="pricing-list">
+                            <li><span>Private Office:</span> <span class="price">€475 per month</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Meeting Rooms -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/meeting sofa.jpg" alt="Meeting Rooms" onerror="this.src='https://via.placeholder.com/400x250?text=Meeting+Rooms'">
+                    </div>
+                    <h3 class="card__title">Meeting Rooms</h3>
+                    <p class="card__text">
+                        FlexPlek IQ offers modern, fully-equipped meeting rooms perfect for team collaborations, client presentations, and brainstorming sessions. With high-speed Wi-Fi, AV equipment, and flexible booking options, we provide the ideal space for productive meetings.
+                    </p>
+                    <button class="pricing-btn" data-show-text="View Pricing" data-hide-text="Hide Pricing">View Pricing</button>
+                    <div class="pricing-content">
+                        <ul class="pricing-list">
+                            <li><span>Small Room:</span> <span class="price">€12.50 per hour</span> <span class="member-tag">€1 for members</span></li>
+                            <li><span>Large Room:</span> <span class="price">€19.50 per hour</span> <span class="member-tag">€1 for members</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kickback Program Section -->
+    <section class="section kickback" id="kickback">
+        <div class="container">
+            <h2 class="section__title">Kickback Program</h2>
+            <div class="kickback__content">
+                <div class="kickback__info">
+                    <h3 class="kickback__subtitle">Unique Concept in the Netherlands</h3>
+                    <p class="kickback__text">
+                        FlexPlek IQ offers a revolutionary approach to coworking: become both a member and supporter of our workspaces and receive significant kickbacks on your membership.
+                    </p>
+                    
+                    <div class="kickback__how">
+                        <h4>How It Works</h4>
+                        <ul class="kickback__list">
+                            <li>Base cost per month: <strong>€2,200</strong></li>
+                            <li>Revenue above this threshold is shared with members</li>
+                            <li>The kickback percentage varies based on the total revenue</li>
+                            <li>The percentage is calculated as: ((new total - base cost) / base cost) × 100</li>
+                            <li>For example, with €3,300: ((3300 - 2200) / 2200) × 100 = 50%</li>
+                            <li>Members receive <strong>50%</strong> of the excess amount</li>
+                            <li>Distribution is calculated monthly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="kickback__calculator">
+                    <h3>Calculate Your Returns</h3>
+                    <div class="calculator">
+                        <div class="calculator__field">
+                            <label for="monthlyRevenue" class="calculator__label">Monthly Revenue (€)</label>
+                            <input type="number" id="monthlyRevenue" class="calculator__input" value="3300" min="2200" step="100">
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Base Cost</label>
+                            <div class="calculator__value">€2,200</div>
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Excess Amount</label>
+                            <div class="calculator__value" id="excessAmount">€1,100</div>
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Kickback %</label>
+                            <div class="calculator__value" id="kickbackPercentage">50%</div>
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Multiplier</label>
+                            <div class="calculator__value" id="multiplier">1.5x</div>
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Your Kickback (50%)</label>
+                            <div class="calculator__value" id="yourKickback">€550</div>
+                        </div>
+                        
+                        <div class="calculator__field">
+                            <label class="calculator__label">Annual Return</label>
+                            <div class="calculator__value" id="annualReturn">€6,600</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Member Benefits Subsection -->
+            <div class="benefits">
+                <h3 class="benefits__title">Member Benefits</h3>
+                <div class="benefits__grid">
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h4 class="benefit-card__title">Reduced Costs</h4>
+                        <p class="benefit-card__text">Significantly lower your effective membership fees</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="benefit-card__title">Passive Income</h4>
+                        <p class="benefit-card__text">Earn monthly returns while using the workspace</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="benefit-card__title">Community</h4>
+                        <p class="benefit-card__text">Be part of a unique cooperative workspace model</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <i class="fas fa-arrow-trend-up"></i>
+                        </div>
+                        <h4 class="benefit-card__title">Growing Returns</h4>
+                        <p class="benefit-card__text">As occupancy increases, so do your kickbacks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue with remaining offerings -->
+    <section class="section offerings offerings-continued">
+        <div class="container">
+            <div class="offerings__grid">
+                <!-- Gym -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/gym1.webp" alt="Gym" onerror="this.src='https://via.placeholder.com/400x250?text=Gym'">
+                    </div>
+                    <h3 class="card__title">Gym</h3>
+                    <p class="card__text">
+                        FlexPlek IQ features an on-site gym with modern equipment, perfect for staying active. Renters can also connect with a certified personal trainer for customized workouts and fitness guidance, supporting a healthy and balanced lifestyle.
+                    </p>
+                    <a href="#booking" class="card__link">More Info</a>
+                </div>
+                
+                <!-- Bar & Indoor Lounge -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/bar for terrace.webp" alt="Bar & Indoor Lounge" onerror="this.src='https://via.placeholder.com/400x250?text=Bar+%26+Indoor+Lounge'">
+                    </div>
+                    <h3 class="card__title">Bar & Indoor Lounge</h3>
+                    <p class="card__text">
+                        Unwind in our sophisticated lounge area. Featuring premium coffee, tea, and refreshments for members. The perfect space for networking, casual meetings, or a relaxing break from work.
+                    </p>
+                    <a href="#booking" class="card__link">More Info</a>
+                </div>
+                
+                <!-- Outdoor Terrace -->
+                <div class="card offering-card">
+                    <div class="card__image">
+                        <img src="../photos/terrace.jpg" alt="Outdoor Terrace" onerror="this.src='https://via.placeholder.com/400x250?text=Outdoor+Terrace'">
+                    </div>
+                    <h3 class="card__title">Outdoor Terrace</h3>
+                    <p class="card__text">
+                        Enjoy our spacious terrace for outdoor working or relaxation. Perfect for informal meetings or a breath of fresh air. Features comfortable seating, Wi-Fi coverage, and stunning city views.
+                    </p>
+                    <a href="#booking" class="card__link">More Info</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occupancy Meter Section -->
+    <section class="section occupancy" id="occupancy">
+        <div class="container">
+            <h2 class="section__title">Current Occupancy</h2>
+            <p class="section__subtitle">See how close we are to activating the Kickback Program</p>
+            
+            <div class="occupancy__content">
+                <!-- Monthly Rentals Progress -->
+                <div class="occupancy__meter">
+                    <div class="occupancy__header">
+                        <h3>Monthly Rentals Progress</h3>
+                        <div class="occupancy__current">
+                            <span class="occupancy__label">Current Revenue:</span>
+                            <span class="occupancy__value">€2,800</span>
+                        </div>
+                    </div>
+                    
+                    <div class="occupancy__scale">
+                        <div class="occupancy__bar">
+                            <div class="occupancy__progress" style="width: 70%;"></div>
+                            <div class="occupancy__threshold" style="left: 80%;">
+                                <span class="occupancy__threshold-label">Kickback Threshold</span>
+                                <span class="occupancy__threshold-value">€2,200</span>
+                            </div>
+                        </div>
+                        <div class="occupancy__markers">
+                            <span class="occupancy__marker">€0</span>
+                            <span class="occupancy__marker">€1,000</span>
+                            <span class="occupancy__marker">€2,000</span>
+                            <span class="occupancy__marker">€3,000</span>
+                            <span class="occupancy__marker">€4,000</span>
+                        </div>
+                    </div>
+                    
+                    <div class="occupancy__stats">
+                        <div class="occupancy__stat">
+                            <span class="occupancy__stat-label">Flexible Desks:</span>
+                            <span class="occupancy__stat-value">8/12</span>
+                        </div>
+                        <div class="occupancy__stat">
+                            <span class="occupancy__stat-label">Private Offices:</span>
+                            <span class="occupancy__stat-value">3/5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="occupancy__info">
+                    <h3>How This Works</h3>
+                    <p>When our monthly revenue exceeds the base cost of €2,200, the Kickback Program activates. Members receive a percentage of the excess revenue based on the total amount.</p>
+                    <div class="occupancy__calculation">
+                        <p>Current calculation: ((€2,800 - €2,200) / €2,200) × 100 = 27%</p>
+                        <p>Members would receive <strong>27%</strong> of the excess amount</p>
+                    </div>
+                    <a href="#kickback" class="btn btn--primary">Learn More About Kickback</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Room Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <h2 class="section__title">Book a Meeting Room</h2>
+            <p class="section__subtitle">Easily schedule your meeting in our modern spaces</p>
+            <div class="booking__container">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/flexplekiq/small-meeting-room-1-4-people?primary_color=4aba60" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Opening Hours Section -->
+    <section class="section hours" id="hours">
+        <div class="container">
+            <h2 class="section__title">Opening Hours</h2>
+            
+            <div class="hours__content">
+                <div class="hours__main">
+                    <div class="hours__day">
+                        <span class="hours__day-name">Monday - Friday</span>
+                        <span class="hours__time">8:00 - 20:00</span>
+                    </div>
+                    
+                    <div class="hours__day">
+                        <span class="hours__day-name">Saturday</span>
+                        <span class="hours__time">9:00 - 18:00</span>
+                    </div>
+                    
+                    <div class="hours__day">
+                        <span class="hours__day-name">Sunday</span>
+                        <span class="hours__time">Closed</span>
+                    </div>
+                </div>
+                
+                <div class="hours__features">
+                    <div class="hours-card">
+                        <div class="hours-card__icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <p class="hours-card__text">24/7 WiFi Access</p>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <div class="hours-card__icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <p class="hours-card__text">Member Key Access</p>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <div class="hours-card__icon">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <p class="hours-card__text">Coffee Bar: 8:00-18:00</p>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <div class="hours-card__icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <p class="hours-card__text">Online Booking Available</p>
+                    </div>
+                </div>
+                
+                <div class="hours__note">
+                    <p>Meeting rooms can be booked during opening hours.</p>
+                    <a href="#room-availability" class="btn btn--secondary">Check Availability</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies in the Building Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section__title">Companies in the Building</h2>
+            <p class="services__intro">Meet the diverse range of companies that call our building home. These businesses operate independently within our space, creating a vibrant and dynamic work environment.</p>
+            
+            <div class="services__grid">
+                <!-- Company 1 -->
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <img src="../photos/company1-placeholder.jpg" alt="Tech Solutions Inc. Logo" width="180" height="120">
+                    </div>
+                    <h3 class="service-card__name">Tech Solutions Inc.</h3>
+                    <p class="service-card__description">A leading IT company specializing in software development and technical support services.</p>
+                    <div class="service-card__links">
+                        <a href="#contact" class="service-card__link">Contact Company</a>
+                        <a href="https://www.example.com" class="service-card__link service-card__link--website" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Company 2 -->
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <img src="../photos/company2-placeholder.jpg" alt="Financial Partners BV Logo" width="180" height="120">
+                    </div>
+                    <h3 class="service-card__name">Financial Partners BV</h3>
+                    <p class="service-card__description">Professional financial advisory firm offering accounting and business consulting services.</p>
+                    <div class="service-card__links">
+                        <a href="#contact" class="service-card__link">Contact Company</a>
+                        <a href="https://www.example.com" class="service-card__link service-card__link--website" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Company 3 -->
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <img src="../photos/company3-placeholder.jpg" alt="Creative Design Studio Logo" width="180" height="120">
+                    </div>
+                    <h3 class="service-card__name">Creative Design Studio</h3>
+                    <p class="service-card__description">A full-service design agency providing marketing and branding solutions.</p>
+                    <div class="service-card__links">
+                        <a href="#contact" class="service-card__link">Contact Company</a>
+                        <a href="https://www.example.com" class="service-card__link service-card__link--website" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                
+                <!-- Company 4 -->
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <img src="../photos/company4-placeholder.jpg" alt="Legal Associates Logo" width="180" height="120">
+                    </div>
+                    <h3 class="service-card__name">Legal Associates</h3>
+                    <p class="service-card__description">A boutique law firm specializing in business and corporate legal services.</p>
+                    <div class="service-card__links">
+                        <a href="#contact" class="service-card__link">Contact Company</a>
+                        <a href="https://www.example.com" class="service-card__link service-card__link--website" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities in the Building Section -->
+    <section class="section activities" id="activities">
+        <div class="container">
+            <h2 class="section__title">Activities in the Building</h2>
+            <p class="activities__intro">Get to know the various activities and events that regularly take place in our building. A perfect way to network and learn from other professionals.</p>
+            
+            <div class="activities__grid">
+                <!-- Activity 1 -->
+                <div class="activity-card">
+                    <div class="activity-card__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="activity-card__name">Networking Events</h3>
+                    <p class="activity-card__description">Monthly networking events where you can meet other professionals and share knowledge.</p>
+                    <a href="#booking" class="activity-card__link">More Information</a>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="activity-card">
+                    <div class="activity-card__icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="activity-card__name">Workshops</h3>
+                    <p class="activity-card__description">Regular workshops on various topics such as digitalization, marketing, and personal development.</p>
+                    <a href="#booking" class="activity-card__link">More Information</a>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="activity-card">
+                    <div class="activity-card__icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="activity-card__name">Innovation Sessions</h3>
+                    <p class="activity-card__description">Interactive sessions where innovative ideas are shared and developed.</p>
+                    <a href="#booking" class="activity-card__link">More Information</a>
+                </div>
+                
+                <!-- Activity 4 -->
+                <div class="activity-card">
+                    <div class="activity-card__icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="activity-card__name">Business Matchmaking</h3>
+                    <p class="activity-card__description">Special events where businesses can meet and explore collaboration opportunities.</p>
+                    <a href="#booking" class="activity-card__link">More Information</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section__title">Contact Us</h2>
+            
+            <div class="contact__content" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <div class="contact__address" style="margin-bottom: 2rem;">
+                    <h3>Visit Us</h3>
+                    <p>Schieland 18, 1948 RM Beverwijk</p>
+                </div>
+                
+                <div class="contact__buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem;">
+                    <a href="mailto:schieland@schieland18.nl" class="btn btn--icon">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    
+                    <a href="https://wa.me/31622380123" class="btn btn--icon btn--whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    
+                    <a href="tel:+31622380123" class="btn btn--icon">
+                        <i class="fas fa-phone"></i> +31 622380123
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Copyright Notice -->
+            <div class="copyright" style="text-align: center; margin-top: 1rem; color: #455A64;">
+                <p>&copy; <span class="current-year">2025</span> FlexPlek IQ. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/calculator.js"></script>
+    <script src="../assets/js/booking.js"></script>
+    <script src="../assets/js/scroll.js"></script>
+    <script src="../assets/js/occupancy.js"></script>
+</body>
+</html>

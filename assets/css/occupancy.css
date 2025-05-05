@@ -1,0 +1,265 @@
+/* Occupancy Meter Styles */
+.occupancy {
+    background-color: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.occupancy__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.occupancy__meter {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.occupancy__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.occupancy__current {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.occupancy__label {
+    color: var(--color-text-light);
+}
+
+.occupancy__value {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 1.1rem;
+}
+
+.occupancy__scale {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.occupancy__bar {
+    position: relative;
+    height: 12px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    overflow: visible;
+}
+
+.occupancy__progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.occupancy__threshold {
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.occupancy__threshold::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 24px;
+    background-color: var(--color-primary);
+}
+
+.occupancy__threshold-label {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    margin-bottom: 0.25rem;
+}
+
+.occupancy__threshold-value {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.occupancy__markers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    padding: 0 0.5rem;
+}
+
+.occupancy__marker {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.occupancy__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.occupancy__stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+}
+
+.occupancy__stat-label {
+    color: var(--color-text-light);
+}
+
+.occupancy__stat-value {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.occupancy__visual {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.occupancy__table {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.occupancy__table:hover {
+    transform: scale(1.1);
+}
+
+.occupancy__table--available {
+    background-color: #4aba60;
+}
+
+.occupancy__table--occupied {
+    background-color: #dc3545;
+}
+
+.occupancy__table--reserved {
+    background-color: #ffc107;
+}
+
+.occupancy__table--unavailable {
+    background-color: #adb5bd;
+}
+
+.occupancy__legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.occupancy__legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.occupancy__legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 6px;
+}
+
+.occupancy__info {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.occupancy__info h3 {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.occupancy__info p {
+    margin-bottom: 1.25rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.occupancy__calculation {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+}
+
+.occupancy__calculation p {
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+}
+
+.occupancy__calculation p:last-child {
+    margin-bottom: 0;
+}
+
+.occupancy__calculation strong {
+    color: var(--color-primary);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .occupancy__content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .occupancy__meter,
+    .occupancy__info {
+        margin-bottom: 1.5rem;
+    }
+    
+    .occupancy__threshold {
+        top: -25px;
+    }
+    
+    .occupancy__threshold::after {
+        height: 20px;
+        bottom: -16px;
+    }
+} 

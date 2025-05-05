@@ -1,0 +1,245 @@
+/* ==========================================================================
+   FlexPlek IQ - Mobile-specific Stylesheet
+   Contains specialized optimizations for mobile devices and touch interfaces
+   This file should be loaded after the main style.css
+   ========================================================================== */
+
+/* Touch Optimizations
+   ========================================================================== */
+
+/* Increase touch targets for better mobile usability */
+.nav__link,
+.btn,
+.card__link,
+.time-slot,
+.partner-card__link,
+.footer__social-link {
+  padding: 0.75rem;
+  touch-action: manipulation;
+}
+
+/* Ensure form elements are properly sized for touch */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea,
+button {
+  min-height: 44px; /* Minimum touch target size */
+}
+
+/* Remove hover effects on touch devices, preventing "sticky hover" bug */
+@media (hover: none) {
+  .card:hover,
+  .benefit-card:hover,
+  .booking-card:hover,
+  .partner-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .nav__link:hover::after {
+    width: 0;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Mobile-Specific Navigation Enhancements
+   ========================================================================== */
+
+/* Off-canvas menu refinements */
+.nav--mobile {
+  padding-top: env(safe-area-inset-top); /* Handle iPhone notch */
+  padding-bottom: env(safe-area-inset-bottom); /* Handle iPhone home indicator */
+}
+
+.menu-toggle {
+  padding: 1rem; /* Larger touch area */
+  margin-right: -1rem; /* Offset padding */
+}
+
+.nav__close {
+  padding: 1rem; /* Larger touch area */
+  margin: -1rem; /* Offset padding */
+}
+
+/* Mobile Performance Optimizations
+   ========================================================================== */
+
+/* Use hardware acceleration for animations on mobile */
+.header,
+.nav--mobile,
+.booking-modal,
+.menu-toggle__bar {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform; /* Hint to browser for optimization */
+}
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 767px) {
+  .section,
+  .card,
+  .benefit-card,
+  .booking-card,
+  .partner-card {
+    transition-duration: 0.3s; /* Shorter animations */
+  }
+  
+  /* Only animate when entering viewport */
+  .revealed {
+    transition-property: none;
+  }
+}
+
+/* Small Screen Layout Adjustments
+   ========================================================================== */
+
+/* Hero section height adjustments for very small screens */
+@media (max-height: 500px) {
+  .hero {
+    height: auto;
+    min-height: 450px;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+  .section__title {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: var(--space-md);
+  }
+  
+  .calculator__field {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .calculator__value {
+    margin-top: var(--space-xs);
+  }
+  
+  .calculator__input {
+    width: 100%;
+    margin-top: var(--space-xs);
+  }
+}
+
+/* Landscape orientation optimizations for mobile */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero {
+    height: 450px;
+  }
+  
+  .nav--mobile .nav__list {
+    column-count: 2;
+  }
+}
+
+/* Device-Specific Adjustments
+   ========================================================================== */
+
+/* iPhone notch handling */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .header {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .nav--mobile {
+    padding-top: env(safe-area-inset-top);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .footer {
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Enhance mobile scrolling experience */
+.room-card__availability {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scroll-behavior: smooth;
+}
+
+/* Mobile Gesture Support
+   ========================================================================== */
+
+.booking-modal__content {
+  overscroll-behavior: contain; /* Prevent scrolling behind modal */
+}
+
+/* Improved tap highlight behavior */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Important interactive elements get subtle tap highlight */
+.nav__link,
+.btn,
+.card__link,
+input,
+select,
+button {
+  -webkit-tap-highlight-color: rgba(43, 158, 63, 0.1); /* Subtle green highlight */
+}
+
+/* Print Styles
+   ========================================================================== */
+
+@media print {
+  .header,
+  .nav,
+  .hero,
+  .footer {
+    display: none;
+  }
+  
+  .section {
+    padding: 1rem 0;
+    page-break-inside: avoid;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  .card,
+  .booking-card,
+  .partner-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
