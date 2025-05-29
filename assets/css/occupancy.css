@@ -1,140 +1,179 @@
 /* Occupancy Meter Styles */
 .occupancy {
-    background-color: #f8f9fa;
-    padding: 4rem 0;
+    background: #ffffff;
+    padding: 3rem 0;
+}
+
+.occupancy .container {
+    text-align: center;
+}
+
+.occupancy .section__title {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .occupancy__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .occupancy__meter {
-    background: #fff;
-    border-radius: 12px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 600px;
+    transition: transform 0.2s ease;
+    margin: 0 auto;
 }
 
 .occupancy__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     margin-bottom: 1.5rem;
 }
 
+.occupancy__header h3 {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
 .occupancy__current {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    background: #1eaa5d;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: white;
 }
 
 .occupancy__label {
-    color: var(--color-text-light);
+    color: rgba(255, 255, 255, 0.9);
+    margin-right: 0.5rem;
 }
 
 .occupancy__value {
-    font-weight: 600;
-    color: var(--color-text);
+    color: white;
     font-size: 1.1rem;
 }
 
 .occupancy__scale {
     position: relative;
     margin: 2rem 0;
+    padding: 0.5rem 0;
 }
 
 .occupancy__bar {
+    height: 16px;
+    background: #f5f7fa;
+    border-radius: 8px;
     position: relative;
-    height: 12px;
-    background-color: #f0f0f0;
-    border-radius: 6px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .occupancy__progress {
-    position: absolute;
-    left: 0;
-    top: 0;
     height: 100%;
-    background: var(--gradient-primary);
-    border-radius: 6px;
-    transition: width 0.3s ease;
+    background: #1eaa5d;
+    border-radius: 8px;
+    transition: width 0.5s ease;
+    position: relative;
 }
 
 .occupancy__threshold {
     position: absolute;
-    top: -30px;
+    top: -28px;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     z-index: 2;
 }
 
-.occupancy__threshold::after {
+.occupancy__threshold::before {
     content: '';
     position: absolute;
-    bottom: -20px;
+    bottom: -6px;
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 24px;
-    background-color: var(--color-primary);
+    height: 6px;
+    background: #1eaa5d;
 }
 
 .occupancy__threshold-label {
     font-size: 0.8rem;
-    color: var(--color-text-light);
-    white-space: nowrap;
-    margin-bottom: 0.25rem;
+    color: #1eaa5d;
+    margin-bottom: 2px;
+    font-weight: 500;
 }
 
 .occupancy__threshold-value {
+    font-size: 0.9rem;
+    color: #2c3e50;
     font-weight: 600;
-    color: var(--color-primary);
 }
 
 .occupancy__markers {
     display: flex;
     justify-content: space-between;
     margin-top: 0.5rem;
-    padding: 0 0.5rem;
+    padding: 0 0.25rem;
 }
 
 .occupancy__marker {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
+    font-size: 0.8rem;
+    color: #64748b;
+    transform: translateX(-50%);
+}
+
+.occupancy__marker:first-child {
+    transform: translateX(0);
+}
+
+.occupancy__marker:last-child {
+    transform: translateX(-100%);
 }
 
 .occupancy__stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #f1f5f9;
 }
 
 .occupancy__stat {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: #f8f8f8;
-    border-radius: 6px;
+    text-align: center;
+    padding: 0.75rem 1.25rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    min-width: 130px;
+    transition: background-color 0.2s ease;
+}
+
+.occupancy__stat:hover {
+    background: #f1f5f9;
 }
 
 .occupancy__stat-label {
-    color: var(--color-text-light);
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
 }
 
 .occupancy__stat-value {
+    font-size: 1rem;
+    color: #2c3e50;
     font-weight: 600;
-    color: var(--color-text);
 }
 
 .occupancy__visual {
@@ -242,24 +281,26 @@
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .occupancy__content {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center;
         gap: 2rem;
     }
 }
 
-@media (max-width: 767px) {
-    .occupancy__meter,
-    .occupancy__info {
-        margin-bottom: 1.5rem;
+@media (max-width: 768px) {
+    .occupancy__meter {
+        padding: 1.5rem;
+        margin: 0 1rem;
     }
-    
-    .occupancy__threshold {
-        top: -25px;
+
+    .occupancy__stats {
+        flex-direction: column;
+        gap: 0.75rem;
     }
-    
-    .occupancy__threshold::after {
-        height: 20px;
-        bottom: -16px;
+
+    .occupancy__stat {
+        width: 100%;
+        min-width: unset;
     }
 } 

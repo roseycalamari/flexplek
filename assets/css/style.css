@@ -293,6 +293,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     z-index: var(--z-header);
     transition: all var(--transition-normal);
+    overflow: visible;
   }
   
   .header.scrolled {
@@ -317,6 +318,9 @@
     justify-content: space-between;
     height: 100%;
     position: relative;
+    padding-right: 2.5rem;
+    box-sizing: border-box;
+    overflow: visible;
   }
   
   .header__logo {
@@ -437,63 +441,94 @@
   
   /* Mobile Menu Toggle */
   .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 18px;
-    padding: 0;
-    background-color: transparent;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background: transparent;
     border: none;
-    z-index: var(--z-above);
-    position: relative;
+    padding: 0;
     cursor: pointer;
-    margin-left: var(--space-sm);
+    position: absolute;
+    top: 35%;
+    right: 3.5rem;
+    transform: translateY(-50%);
+    z-index: 9999;
   }
-  
+
   .menu-toggle__bar {
-    width: 100%;
+    display: block;
+    width: 24px;
     height: 2px;
     background-color: var(--color-primary);
-    border-radius: var(--radius-pill);
-    transition: all var(--transition-normal);
+    position: relative;
+    transition: background-color 0.3s ease;
   }
-  
-  .menu-toggle__bar:nth-child(1) {
-    width: 70%;
-    align-self: flex-end;
+
+  .menu-toggle__bar::before,
+  .menu-toggle__bar::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
   }
-  
-  .menu-toggle__bar:nth-child(2) {
-    width: 100%;
+
+  .menu-toggle__bar::before {
+    top: -8px;
   }
-  
-  .menu-toggle__bar:nth-child(3) {
-    width: 70%;
-    align-self: flex-start;
+
+  .menu-toggle__bar::after {
+    bottom: -8px;
   }
-  
-  .menu-toggle:hover .menu-toggle__bar:nth-child(1),
-  .menu-toggle:hover .menu-toggle__bar:nth-child(3) {
-    width: 100%;
+
+  .menu-toggle.active .menu-toggle__bar {
+    background-color: transparent;
   }
-  
-  .menu-toggle.active .menu-toggle__bar:nth-child(1) {
-    transform: translateY(9.5px) rotate(45deg);
-    width: 100%;
-    align-self: center;
+
+  .menu-toggle.active .menu-toggle__bar::before {
+    transform: rotate(45deg);
+    top: 0;
   }
-  
-  .menu-toggle.active .menu-toggle__bar:nth-child(2) {
-    transform: scaleX(0);
-    opacity: 0;
+
+  .menu-toggle.active .menu-toggle__bar::after {
+    transform: rotate(-45deg);
+    bottom: 0;
   }
-  
-  .menu-toggle.active .menu-toggle__bar:nth-child(3) {
-    transform: translateY(-9.5px) rotate(-45deg);
-    width: 100%;
-    align-self: center;
-  }
+
+  @media (max-width: 991px) {
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav--desktop {
+        display: none;
+    }
+    .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        margin-left: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-toggle {
+        margin-left: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-toggle {
+        margin-left: 0.25rem;
+    }
+}
   
   /* Mobile Off-Canvas Navigation */
   .nav--mobile {
@@ -1069,45 +1104,75 @@
   /* Calculator Styles */
   .kickback__calculator {
     background-color: var(--color-white);
-    padding: var(--space-xl);
+    padding: var(--space-lg);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  
+  .kickback__calculator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    z-index: 1;
   }
   
   .kickback__calculator h3 {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
     color: var(--color-secondary);
     text-align: center;
     font-family: var(--font-display);
+    position: relative;
+    z-index: 2;
   }
   
   .calculator {
-    margin-top: var(--space-md);
+    margin-top: var(--space-sm);
+    background-color: #fafafa;
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    border: 1px solid rgba(0, 0, 0, 0.03);
   }
   
   .calculator__field {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid var(--color-base-dark);
+    padding: var(--space-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: all var(--transition-normal);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-xs);
+    background-color: var(--color-white);
+  }
+  
+  .calculator__field:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
   }
   
   .calculator__field:hover {
-    background-color: rgba(43, 158, 63, 0.03);
+    background-color: rgba(43, 158, 63, 0.02);
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
   }
   
   .calculator__label {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-secondary);
+    font-size: 0.95rem;
   }
   
   .calculator__input {
-    width: 180px;
+    width: 140px;
     padding: var(--space-sm) var(--space-md);
     border: 2px solid var(--color-base-dark);
     border-radius: var(--radius-md);
@@ -1115,35 +1180,45 @@
     text-align: right;
     transition: all var(--transition-normal);
     background-color: var(--color-white);
+    font-weight: 600;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
   }
   
   .calculator__input:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(43, 158, 63, 0.1);
+    box-shadow: 0 0 0 3px rgba(43, 158, 63, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.05);
     outline: none;
+    transform: scale(1.02);
   }
   
   .calculator__value {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-primary);
     transition: all var(--transition-bounce);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    background-color: rgba(43, 158, 63, 0.05);
+    border: 1px solid rgba(43, 158, 63, 0.1);
   }
   
   .calculator__value.highlight {
-    animation: highlight 0.5s ease-out;
+    animation: highlight 0.6s ease-out;
   }
   
   @keyframes highlight {
     0% {
       transform: scale(1);
+      background-color: rgba(43, 158, 63, 0.05);
     }
     50% {
-      transform: scale(1.1);
+      transform: scale(1.08);
       color: var(--color-accent);
+      background-color: rgba(43, 158, 63, 0.15);
     }
     100% {
       transform: scale(1);
+      background-color: rgba(43, 158, 63, 0.05);
     }
   }
   
@@ -1163,34 +1238,50 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto;
   }
   
   .benefit-card {
     text-align: center;
-    padding: var(--space-lg);
+    padding: var(--space-xl);
     background-color: var(--color-white);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-md);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
     z-index: var(--z-normal);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(43, 158, 63, 0.08);
   }
   
   .benefit-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(43, 158, 63, 0.15);
+    border-color: var(--color-primary-light);
+  }
+  
+  .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    z-index: 1;
   }
   
   .benefit-card__icon {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
-    margin-bottom: var(--space-md);
-    height: 60px;
+    margin-bottom: var(--space-lg);
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 2;
   }
   
   .benefit-card__icon i {
@@ -1198,16 +1289,18 @@
   }
   
   .benefit-card:hover .benefit-card__icon i {
-    transform: scale(1.2);
+    transform: scale(1.15) rotate(-5deg);
   }
   
   .benefit-card__title {
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
     color: var(--color-secondary);
     font-weight: 600;
     position: relative;
-    padding-bottom: var(--space-sm);
+    padding-bottom: var(--space-md);
     display: inline-block;
+    font-size: 1.25rem;
+    z-index: 2;
   }
   
   .benefit-card__title::after {
@@ -2785,7 +2878,8 @@
     }
     
     .benefits__grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
     }
     
     .booking__options {
@@ -2868,7 +2962,9 @@
     }
     
     .benefits__grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      max-width: 1000px;
     }
     
     .offerings__grid {
@@ -2931,6 +3027,16 @@
       --container-padding: 1.5rem;
       --space-md: 1.25rem;
       --space-lg: 2rem;
+    }
+    
+    .benefit-card {
+      padding: var(--space-lg);
+    }
+    
+    .benefit-card__icon {
+      font-size: 2.25rem;
+      height: 70px;
+      margin-bottom: var(--space-md);
     }
   }
 
@@ -3299,5 +3405,58 @@
     .booking__room iframe,
     .booking__room .calendly-inline-widget {
       height: 500px !important;
+    }
+  }
+
+  /* Force booking rooms to single column on mobile */
+  @media (max-width: 768px) {
+    .booking__rooms {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+      max-width: 100vw !important;
+      padding: 0 0.5rem !important;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .menu-toggle {
+      display: flex !important;
+      z-index: 9999 !important;
+    }
+    
+    .nav--desktop {
+      display: none !important;
+    }
+  }
+
+  /* Additional mobile breakpoints for hamburger visibility */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: flex !important;
+      z-index: 9999 !important;
+      position: relative !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .menu-toggle {
+      display: flex !important;
+      z-index: 9999 !important;
+      position: relative !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-toggle {
+      display: flex !important;
+      z-index: 9999 !important;
+      position: relative !important;
+      visibility: visible !important;
+      opacity: 1 !important;
     }
   }

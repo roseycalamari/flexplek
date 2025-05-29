@@ -86,33 +86,30 @@ function initMobileMenu() {
         return;
     }
     
-    // Force initial visibility of menu toggle button
-    menuToggle.style.display = 'flex';
-    
     // Toggle menu on burger icon click
     menuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        this.classList.toggle('active');
         mobileNav.classList.toggle('active');
         navOverlay.classList.toggle('active');
-        this.classList.toggle('active');
         document.body.classList.toggle('menu-open');
     });
     
     // Close menu on overlay click
     navOverlay.addEventListener('click', function() {
+        menuToggle.classList.remove('active');
         mobileNav.classList.remove('active');
         navOverlay.classList.remove('active');
-        menuToggle.classList.remove('active');
         document.body.classList.remove('menu-open');
     });
     
     // Close menu on close button click
     if (navClose) {
         navClose.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
             navOverlay.classList.remove('active');
-            menuToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
         });
     }
@@ -121,9 +118,9 @@ function initMobileMenu() {
     const mobileNavLinks = document.querySelectorAll('.nav--mobile .nav__link');
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
             navOverlay.classList.remove('active');
-            menuToggle.classList.remove('active');
             document.body.classList.remove('menu-open');
         });
     });

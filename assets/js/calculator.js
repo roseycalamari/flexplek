@@ -13,15 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function initKickbackCalculator() {
     const revenueInput = document.getElementById('monthlyRevenue');
     const excessAmountElement = document.getElementById('excessAmount');
-    const yourKickbackElement = document.getElementById('yourKickback');
-    const annualReturnElement = document.getElementById('annualReturn');
     const kickbackPercentageElement = document.getElementById('kickbackPercentage');
     const multiplierElement = document.getElementById('multiplier');
     
     // Base costs value defined in the UI
     const baseCosts = 2200;
     
-    if (revenueInput && excessAmountElement && yourKickbackElement && annualReturnElement && kickbackPercentageElement && multiplierElement) {
+    if (revenueInput && excessAmountElement && kickbackPercentageElement && multiplierElement) {
         // Calculate initial values
         calculateKickback();
         
@@ -46,12 +44,6 @@ function initKickbackCalculator() {
             // Calculate the excess amount
             const excessAmount = revenue - baseCosts;
             
-            // Calculate your kickback (50% of excess)
-            const yourKickback = excessAmount * 0.5;
-            
-            // Calculate annual return (kickback * 12 months)
-            const annualReturn = yourKickback * 12;
-            
             // Calculate percentage increase (new formula)
             const percentageIncrease = ((revenue - baseCosts) / baseCosts) * 100;
             
@@ -60,15 +52,11 @@ function initKickbackCalculator() {
             
             // Update the UI with formatted values
             excessAmountElement.textContent = `€${excessAmount.toFixed(2)}`;
-            yourKickbackElement.textContent = `€${yourKickback.toFixed(2)}`;
-            annualReturnElement.textContent = `€${annualReturn.toFixed(2)}`;
             kickbackPercentageElement.textContent = `${percentageIncrease.toFixed(2)}%`;
             multiplierElement.textContent = `${multiplier.toFixed(2)}x`;
             
             // Add highlight animation to values
             highlightElement(excessAmountElement);
-            highlightElement(yourKickbackElement);
-            highlightElement(annualReturnElement);
             highlightElement(kickbackPercentageElement);
             highlightElement(multiplierElement);
         }
