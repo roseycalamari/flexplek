@@ -44,11 +44,11 @@ function initKickbackCalculator() {
             // Calculate the excess amount
             const excessAmount = revenue - baseCosts;
             
-            // Calculate percentage increase (new formula)
-            const percentageIncrease = ((revenue - baseCosts) / baseCosts) * 100;
+            // Calculate percentage using new formula: (revenue - baseCosts) / revenue * 100
+            const percentageIncrease = ((revenue - baseCosts) / revenue) * 100;
             
-            // Calculate multiplier (new formula matches percentage increase / 100)
-            const multiplier = (revenue - baseCosts) / baseCosts;
+            // Calculate multiplier (matches percentage / 100)
+            const multiplier = (revenue - baseCosts) / revenue;
             
             // Update the UI with formatted values
             excessAmountElement.textContent = `€${excessAmount.toFixed(2)}`;
